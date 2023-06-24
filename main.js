@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("\n\nfunction component(type) {\n    const element = document.createElement(type);\n    console.log(\"Created a \" + type);\n    return element;\n}\n\nconst header = component('header');\nconst main = component('main');\nconst footer = component('footer');\n\ndocument.body.appendChild(header);\ndocument.body.appendChild(main);\ndocument.body.appendChild(footer);\n\n\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
 
 /***/ })
 
