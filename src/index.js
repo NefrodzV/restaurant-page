@@ -5,20 +5,20 @@ import backgroundImage from './images/home-background.jpg';
 
 const navData = navMenu;
 
-function component(type) {
+function createComponent(type) {
     const element = document.createElement(type);
     console.log("Created a " + type);
     return element;
 }
 
 function navComponent() {
-    const nav = Utils.createComponent('nav');
+    const nav = createComponent('nav');
     const items = navData.navItems;
     
     for(let i = 0; i < items.length; i++) {
         let navItem = items[i];
-        let anchor = Utils.createComponent('a');
-        addStyle(anchor, 'border');
+        let anchor = createComponent('a');
+        addStyle(anchor, 'navItem')
         anchor.textContent = navItem.title;
         anchor.href = `#`;
         nav.appendChild(anchor);
@@ -38,18 +38,26 @@ function addImage(element, source) {
 }
 
 // Page Components
-const header = Utils.createComponent('header');
+
+//Header
+const header = createComponent('header');
+const brandLogo = createComponent('h1');
+brandLogo.textContent = "Nana's Kitchen !"
+addStyle(brandLogo, 'logo');
+header.appendChild(brandLogo);
 header.appendChild(navComponent());
 
-const main = Utils.createComponent('main');
+// Main
+const main = createComponent('main');
 
-const content = Utils.createComponent('div');
+const content = createComponent('div');
 addStyle(content, 'content');
 
-const contentTitle = Utils.createComponent('h1');
-contentTitle.textContent = "Restaurant name!";
 
-const card = Utils.createComponent('div');
+const contentTitle = createComponent('h1');
+contentTitle.textContent = "Nana's Kitchen!";
+
+const card = createComponent('div');
 addStyle(card, 'card');
 addStyle(card, 'border');
 addStyle(card, 'box-shadow');
@@ -62,7 +70,18 @@ addImage(main, backgroundImage)
 
 
 
-const footer = Utils.createComponent('footer');
+// Footer
+const footer = createComponent('footer');
+
+const footerText = createComponent('h6');
+footerText.textContent = "Created by ";
+
+const footerAnchor = createComponent('a');
+footerAnchor.textContent = "Nfrodzv";
+footerAnchor.href = 'https://github.com/NefrodzV/restaurant-page';
+
+footerText.appendChild(footerAnchor);
+footer.appendChild(footerText);
 
 document.body.appendChild(header);
 document.body.appendChild(main);
