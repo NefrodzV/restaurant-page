@@ -18,6 +18,7 @@ function navComponent() {
     for(let i = 0; i < items.length; i++) {
         let navItem = items[i];
         let anchor = Utils.createComponent('a');
+        addStyle(anchor, 'border');
         anchor.textContent = navItem.title;
         anchor.href = `#`;
         nav.appendChild(anchor);
@@ -41,7 +42,21 @@ const header = Utils.createComponent('header');
 header.appendChild(navComponent());
 
 const main = Utils.createComponent('main');
+
 const content = Utils.createComponent('div');
+addStyle(content, 'content');
+
+const contentTitle = Utils.createComponent('h1');
+contentTitle.textContent = "Restaurant name!";
+
+const card = Utils.createComponent('div');
+addStyle(card, 'card');
+addStyle(card, 'border');
+addStyle(card, 'box-shadow');
+
+content.appendChild(contentTitle);
+content.appendChild(card);
+
 main.appendChild(content);
 addImage(main, backgroundImage)
 

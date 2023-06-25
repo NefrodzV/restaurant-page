@@ -1,14 +1,13 @@
 :root {
     --primary-clr: #00235B;
-    --secondary-clr: #e62929;
+    --secondary-clr: #ffffff;
+    --accent-clr: #ff5858;
     --text-clr: var(--primary-clr);
-    --accent-clr: #ffffff;
-    
 }
 body, main {
     display: grid;
 }
-body {
+body {background-color: var(--primary-clr);
     margin: 0;
     min-height: 100vh;
     grid-template-rows: 100px 3fr .1fr;
@@ -16,11 +15,14 @@ body {
 
 header {
     padding: 1rem;
-    background-color: var(--primary-clr);
+    
 }
 main {
     grid-template-columns: .5fr 1fr;
     background-color: var(--secondary-clr);
+}
+h1 {
+    color: var(--primary-clr);
 }
 
 footer, nav, a {
@@ -29,7 +31,7 @@ footer, nav, a {
 
 }
 footer {
-    background-color: var(--primary-clr);
+    
 }
 nav {
     height: 100%;
@@ -38,23 +40,41 @@ nav {
 }
 
 a {
-    border-radius: 5px;
     width: 7rem;
     font-size: 2rem;
     padding: 1rem;
-    background-color: var(--accent-clr);
+    background-color: var(--secondary-clr);
     color: #00235B;
     text-decoration: none;
 }
 a:hover {
-    background-color: var(--secondary-clr);
+    background-color: var(--accent-clr);
 }
 
 img {
     height: 100%;
     width: 100%;
 }
+.border {
+    border-radius: 5px;
+}
+.box-shadow {
+    box-shadow: 0px 3px 12px var(--primary-clr);
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 
+}
+
+.card {
+    width: 90%;
+    background-color: var(--secondary-clr);
+    
+    height: 25%;
+}
 
 
 
