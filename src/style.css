@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'BrandFont';
+    src: url('./font/Fasthand-Regular.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'BodyFont';
+    src: url('./font/Martel-Regular.ttf');
+}
 :root {
     --primary-clr: #00235B;
     --secondary-clr: #ffffff;
@@ -7,7 +16,10 @@
 body, main {
     display: grid;
 }
-body {background-color: var(--primary-clr);
+body 
+{
+    font-family: 'BodyFont';
+    background-color: var(--primary-clr);
     margin: 0;
     min-height: 100vh;
     grid-template-rows: 100px 3fr .1fr;
@@ -22,6 +34,9 @@ main {
     background-color: var(--secondary-clr);
 }
 h1 {
+    margin: 0;
+    font-family: 'BrandFont';
+    font-size: 3rem;
     color: var(--primary-clr);
 }
 
@@ -39,7 +54,7 @@ nav {
     gap: 2rem;
 }
 
-a {
+.navItem {
     width: 7rem;
     font-size: 2rem;
     padding: 1rem;
@@ -47,7 +62,7 @@ a {
     color: #00235B;
     text-decoration: none;
 }
-a:hover {
+.navItem:hover {
     background-color: var(--accent-clr);
 }
 
