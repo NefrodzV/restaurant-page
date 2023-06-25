@@ -1,43 +1,47 @@
 :root {
     --primary-clr: #00235B;
-    --secondary-clr: #ec5252;
+    --secondary-clr: #e62929;
     --text-clr: var(--primary-clr);
     --accent-clr: #ffffff;
     
 }
-
+body, main {
+    display: grid;
+}
 body {
     margin: 0;
     min-height: 100vh;
-    display: grid;
-    grid-template-rows: .25fr 3fr .1fr;
+    grid-template-rows: 100px 3fr .1fr;
 }
 
 header {
-    padding: 8px;
-   background-color: var(--primary-clr);
+    padding: 1rem;
+    background-color: var(--primary-clr);
 }
 main {
+    grid-template-columns: .5fr 1fr;
     background-color: var(--secondary-clr);
+}
+
+footer, nav, a {
+    display: flex;
+    justify-content: center;
+
 }
 footer {
     background-color: var(--primary-clr);
 }
 nav {
     height: 100%;
-    display: flex;
-    justify-content: center;
     align-items: center;
     gap: 2rem;
 }
 
 a {
     border-radius: 5px;
-    display: flex;
-    justify-content: center;
     width: 7rem;
     font-size: 2rem;
-    padding: 16px;
+    padding: 1rem;
     background-color: var(--accent-clr);
     color: #00235B;
     text-decoration: none;
@@ -45,6 +49,12 @@ a {
 a:hover {
     background-color: var(--secondary-clr);
 }
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
 
 
 
