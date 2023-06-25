@@ -1,3 +1,4 @@
+/* Giving bugs with space need to change them fonts */
 @font-face {
     font-family: 'BrandFont';
     src: url('./font/Fasthand-Regular.ttf');
@@ -13,53 +14,64 @@
     --accent-clr: #ff5858;
     --text-clr: var(--primary-clr);
 }
+html {
+    height: 100%;
+}
 body, main {
     display: grid;
 }
-body 
-{
-    font-family: 'BodyFont';
+body {
+    /* font-family: 'BodyFont'; */
     background-color: var(--primary-clr);
     margin: 0;
     min-height: 100vh;
-    grid-template-rows: 100px 3fr .1fr;
+    grid-template-rows: 50px auto 25px;
 }
 
 header {
-    padding: 1rem;
-    
+    padding-left: 1%;
+    display: flex;
+    align-items: center;
 }
+
+.logo{
+    
+    height: fit-content;
+    margin: 0;
+    color: var(--secondary-clr);
+}
+
+nav {
+    flex:1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 main {
     grid-template-columns: .5fr 1fr;
     background-color: var(--secondary-clr);
 }
-h1 {
-    margin: 0;
-    font-family: 'BrandFont';
-    font-size: 3rem;
-    color: var(--primary-clr);
-}
 
-footer, nav, a {
-    display: flex;
-    justify-content: center;
 
-}
 footer {
-    
+    display: flex;
+    color: var(--secondary-clr)
 }
-nav {
-    height: 100%;
-    align-items: center;
-    gap: 2rem;
+footer >h6 {
+    margin:auto;
+}
+footer > h6 > a {
+    color:var(--secondary-clr);
 }
 
 .navItem {
-    width: 7rem;
-    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 4rem;
+    font-size: 1rem;
     padding: 1rem;
-    background-color: var(--secondary-clr);
-    color: #00235B;
+    color: var(--secondary-clr);
     text-decoration: none;
 }
 .navItem:hover {
@@ -80,15 +92,12 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-
 }
 
 .card {
     width: 90%;
     background-color: var(--secondary-clr);
-    
-    height: 25%;
+    height: 75%;
 }
 
 
