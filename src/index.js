@@ -2,8 +2,10 @@ import './style.css';
 import navMenu from './NavMenu';
 import Utils from './Utils';
 import backgroundImage from './images/home-background.jpg';
+import Header from './Header.js';
+import Footer from './Footer.js';
 
-const navData = navMenu;
+const navigation = navMenu;
 
 function createComponent(type) {
     const element = document.createElement(type);
@@ -12,12 +14,12 @@ function createComponent(type) {
 }
 
 function navComponent() {
-    const nav = createComponent('nav');
-    const items = navData.navItems;
-    
-    for(let i = 0; i < items.length; i++) {
+    const nav = Utils.createComponent('nav');
+    const items = navigation.navItems;
+
+    for (let i = 0; i < items.length; i++) {
         let navItem = items[i];
-        let anchor = createComponent('a');
+        let anchor = Utils.createComponent('a');
         addStyle(anchor, 'navItem')
         anchor.textContent = navItem.title;
         anchor.href = `#`;
@@ -28,7 +30,7 @@ function navComponent() {
 }
 
 function addStyle(element, style) {
-element.classList.add(style)
+    element.classList.add(style)
 }
 
 function addImage(element, source) {
@@ -37,27 +39,22 @@ function addImage(element, source) {
     element.appendChild(image);
 }
 
-// Page Components
+// Main Page Components
 
 //Header
-const header = createComponent('header');
-const brandLogo = createComponent('h1');
-brandLogo.textContent = "Nana's Kitchen !"
-addStyle(brandLogo, 'logo');
-header.appendChild(brandLogo);
-header.appendChild(navComponent());
+const header = Header().headerElement;
 
 // Main
-const main = createComponent('main');
+const main = Utils.createComponent('main');
 
-const content = createComponent('div');
+const content = Utils.createComponent('div');
 addStyle(content, 'content');
 
 
 const contentTitle = createComponent('h1');
 contentTitle.textContent = "Nana's Kitchen!";
 
-const card = createComponent('div');
+const card = Utils.createComponent('div');
 addStyle(card, 'card');
 addStyle(card, 'border');
 addStyle(card, 'box-shadow');
@@ -71,17 +68,7 @@ addImage(main, backgroundImage)
 
 
 // Footer
-const footer = createComponent('footer');
-
-const footerText = createComponent('h6');
-footerText.textContent = "Created by ";
-
-const footerAnchor = createComponent('a');
-footerAnchor.textContent = "Nfrodzv";
-footerAnchor.href = 'https://github.com/NefrodzV/restaurant-page';
-
-footerText.appendChild(footerAnchor);
-footer.appendChild(footerText);
+const footer = Footer().footerElement;
 
 document.body.appendChild(header);
 document.body.appendChild(main);
