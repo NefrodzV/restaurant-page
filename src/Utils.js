@@ -8,4 +8,14 @@ export default class Utils{
         console.log("Created a " + type);
         return element;
     }
+
+    static addStyle(element, style) {
+        element.classList.add(style)
+    }
+    
+    static addImage(element, source) {
+        const image = new Image();
+        image.src = source;
+        element.appendChild(image);
+    }
 }
