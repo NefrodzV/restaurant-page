@@ -10,10 +10,6 @@ export default function headerFactory() {
 
     headerElement.appendChild(brandLogo);
     headerElement.appendChild(navigation);
-    // headerElement.appendChild(navComponent());
-
-
-    
     
     return {
         headerElement
