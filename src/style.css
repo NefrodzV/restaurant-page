@@ -1,27 +1,31 @@
 /* Giving bugs with space need to change them fonts */
 @font-face {
     font-family: 'BrandFont';
-    src: url('./font/Fasthand-Regular.ttf');
+    src: url('./font/DancingScript-VariableFont_wght.ttf');
     font-weight: bold;
 }
 @font-face {
     font-family: 'BodyFont';
     src: url('./font/Martel-Regular.ttf');
+    font-size: 1rem;
 }
+
 :root {
-    --primary-clr: #00235B;
+    --primary-clr: rgb(0, 35, 91);
     --secondary-clr: #ffffff;
     --accent-clr: #ff5858;
     --text-clr: var(--primary-clr);
+    --shade-clr: rgb(0, 22, 58);
 }
 html {
     height: 100%;
 }
-body, main {
+body, .home {
     display: grid;
 }
 body {
-    /* font-family: 'BodyFont'; */
+    color: var(--shade-clr);
+    font-family: 'BodyFont';
     background-color: var(--primary-clr);
     margin: 0;
     min-height: 100vh;
@@ -35,10 +39,11 @@ header {
 }
 
 .logo{
-    
+    font-size: 3rem;
     height: fit-content;
     margin: 0;
     color: var(--secondary-clr);
+    font-family: 'BrandFont';
 }
 
 nav {
@@ -48,7 +53,7 @@ nav {
     justify-content: center;
 }
 
-main {
+.home {
     grid-template-columns: .5fr 1fr;
     background-color: var(--secondary-clr);
 }
@@ -75,7 +80,7 @@ footer > h6 > a {
     text-decoration: none;
 }
 .navItem:hover {
-    background-color: var(--accent-clr);
+    background-color: var(--shade-clr);
 }
 
 img {
