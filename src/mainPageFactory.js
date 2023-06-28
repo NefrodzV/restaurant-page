@@ -8,28 +8,42 @@ export default function mainPageFactory() {
     const home = homePageFactory();
     const menuPage = menuPageFactory();
 
-    const mainPageElement = home.homePageElement;
+    const mainPageElement = document.createElement('main');
+    mainPageElement.append(home.content);
+    mainPageElement.append(home.image)
+    Utils.addStyle(mainPageElement, home.STYLE);
+           
     
-    
-
     const updateMainPage = (clickedNavItem) => {
         switch (clickedNavItem) {
             case 'Home':
-                    mainPageElement.append(home.homeElement);
-                    Utils.addStyle(main, 'home');
-                break;
+                removeChildren();
+                mainPageElement.append(home.content);
+                mainPageElement.append(home.image)
+                Utils.addStyle(mainPageElement, home.STYLE);
+            break;
             case 'Menu':
-                mainPageElement.appendChild(menuPage.menuPageElement);
-        
+                removeChildren();
+                mainPageElement.append(menuPage.menuPageElement)
+            break;
+
             default:
                 console.log('Updating page bug');
                 break;
         }
     }
 
+    const removeChildren = () => {
+        while(mainPageElement.firstChild) {
+            mainPageElement.removeChild(
+                mainPageElement.firstChild);
+        }
+    }
+
 
     return {
-        mainPageElement
+        mainPageElement,
+        updateMainPage
     }
 
     

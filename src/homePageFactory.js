@@ -3,8 +3,8 @@ import Utils from "./Utils";
 
 export default function homePageFactory() {
 
-    const homePageElement= Utils.createComponent('main');
-    Utils.addStyle(homePageElement, 'home');
+    const STYLE = 'home';
+
     const content = Utils.createComponent('div');
     Utils.addStyle(content, 'content');
 
@@ -20,10 +20,14 @@ export default function homePageFactory() {
     content.appendChild(contentTitle);
     // content.appendChild(card);
 
-    homePageElement.appendChild(content);
-    Utils.addImage(homePageElement, backgroundImage);
+    const image = new Image();
+    image.src = backgroundImage;
+    
+    
 
     return {
-        homePageElement
+        content, 
+        image,
+        STYLE
     }
 }
