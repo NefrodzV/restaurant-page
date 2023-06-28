@@ -1,10 +1,10 @@
 import backgroundImage from './images/home-background.jpg';
 import Utils from "./Utils";
 
-export default function homeFactory() {
+export default function homePageFactory() {
 
-    const mainElement = Utils.createComponent('main');
-    Utils.addStyle(mainElement, 'home');
+    const homePageElement= Utils.createComponent('main');
+    Utils.addStyle(homePageElement, 'home');
     const content = Utils.createComponent('div');
     Utils.addStyle(content, 'content');
 
@@ -20,10 +20,10 @@ export default function homeFactory() {
     content.appendChild(contentTitle);
     // content.appendChild(card);
 
-    mainElement.appendChild(content);
-    Utils.addImage(mainElement, backgroundImage);
+    homePageElement.appendChild(content);
+    Utils.addImage(homePageElement, backgroundImage);
 
     return {
-        mainElement
+        homePageElement
     }
 }

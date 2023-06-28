@@ -3,7 +3,8 @@ import Utils from './Utils';
 import backgroundImage from './images/home-background.jpg';
 import Header from './headerFactory.js';
 import Footer from './footerFactory.js';
-import homeFactory from './homeFactory';
+import homeFactory from './homePageFactory';
+import mainPageFactory from './mainPageFactory';
 
 function updateMainComponent(target) {
     switch (target) {
@@ -31,11 +32,12 @@ function updateMainComponent(target) {
 
 //Header
 const header = Header();
-const headerComponent = header.headerElement;
+
 
 const navigation = header.getNavComponent();
 const navItems = navigation.getItems();
-console.log(navItems);
+
+
 
 for(let i = 0; i < navItems.length; i++) {
     let navItem = navItems[i];
@@ -43,17 +45,18 @@ for(let i = 0; i < navItems.length; i++) {
     element.addEventListener('click',function(e){
         updateMainComponent(e.target.textContent);
     })
-
 }
 
 // Main
-const main = homeFactory().mainElement;
+const main = mainPageFactory();
+// const main = homeFactory().mainElement;
 
 // Footer
-const footer = Footer().footerElement;
 
-document.body.appendChild(headerComponent);
-document.body.appendChild(main);
-document.body.appendChild(footer);
+const footer = Footer();
+
+document.body.appendChild(header.headerElement);
+document.body.appendChild(main.mainPageElement);
+document.body.appendChild(footer.footerElement);
 
 
