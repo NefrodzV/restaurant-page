@@ -15,6 +15,7 @@ export default function mainPageFactory() {
            
     
     const updateMainPage = (clickedNavItem) => {
+        removeStyle();
         switch (clickedNavItem) {
             case 'Home':
                 removeChildren();
@@ -23,8 +24,10 @@ export default function mainPageFactory() {
                 Utils.addStyle(mainPageElement, home.STYLE);
             break;
             case 'Menu':
+    
                 removeChildren();
-                mainPageElement.append(menuPage.menuPageElement)
+                mainPageElement.append(menuPage.menuPageElement);
+                Utils.addStyle(mainPageElement, menuPage.STYLE);
             break;
 
             default:
@@ -40,7 +43,12 @@ export default function mainPageFactory() {
         }
     }
 
+    const removeStyle = () => {
+        mainPageElement.classList.remove('home');
+        mainPageElement.classList.remove('menu');
+        mainPageElement.classList.remove('contact');
 
+    }
     return {
         mainPageElement,
         updateMainPage

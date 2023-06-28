@@ -90,6 +90,16 @@ footer > h6 > a {
     background-color: var(--shade-clr);
 }
 
+.navItem[active] {
+    background-color: var(--shade-clr);
+}
+
+.menu {
+    background-color: var(--secondary-clr);
+    margin: 0 auto;
+    width: 80%;
+
+}
 img {
     height: 100%;
     width: 100%;
