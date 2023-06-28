@@ -10,6 +10,7 @@ export default function homeFactory() {
 
     const contentTitle = Utils.createComponent('h1');
     contentTitle.textContent = 'Grand Opening!';
+    Utils.addStyle(contentTitle, 'title');
 
     // const card = Utils.createComponent('div');
     // Utils.addStyle(card, 'card');
