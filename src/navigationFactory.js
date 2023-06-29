@@ -5,6 +5,7 @@ export default function navigationFactory() {
     const navElement = Utils.createComponent('nav');
 
     const homeItem = navigationItemFactory('Home');
+    homeItem.toggleActive();
     const menuItem = navigationItemFactory('Menu');
     const contactItem = navigationItemFactory('Contact');
 
@@ -26,11 +27,19 @@ export default function navigationFactory() {
     // console.log(navItems);
     // const getNavigationItems = () => {return navItems;}
 
+    const disableNavItemsActive = () => {
+        for(let i = 0; i < navItems.length; i++) {
+            let navItem = navItems[i];
+            navItem.disableActive();
+        }
+    }
+
     return {
         navElement,
         getItems() {
             return navItems;
-        }
+        },
+        disableNavItemsActive
     }
 }
 

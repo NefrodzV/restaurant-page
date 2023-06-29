@@ -23,8 +23,6 @@ export default function homePageFactory() {
     const image = new Image();
     image.src = backgroundImage;
     
-    
-
     return {
         content, 
         image,

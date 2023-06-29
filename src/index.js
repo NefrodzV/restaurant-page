@@ -20,7 +20,11 @@ const navItems = navigation.getItems();
 for(let i = 0; i < navItems.length; i++) {
     let navItem = navItems[i];
     let element = navItem.navItemComponent;
+
+    
     element.addEventListener('click',function(e){
+        navigation.disableNavItemsActive();
+        navItem.toggleActive();
         let clickedNavItem = e.target.textContent;
         main.updateMainPage(clickedNavItem);
     })
