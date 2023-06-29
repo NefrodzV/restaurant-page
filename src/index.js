@@ -11,12 +11,10 @@ import mainPageFactory from './mainPageFactory';
 //Header
 const header = Header();
 
-
 const navigation = header.getNavComponent();
 const navItems = navigation.getItems();
 
-
-
+// Eventlisteners for the navbar items
 for(let i = 0; i < navItems.length; i++) {
     let navItem = navItems[i];
     let element = navItem.navItemComponent;
@@ -32,10 +30,8 @@ for(let i = 0; i < navItems.length; i++) {
 
 // Main
 const main = mainPageFactory();
-// const main = homeFactory().mainElement;
 
 // Footer
-
 const footer = Footer();
 
 document.body.appendChild(header.headerElement);
