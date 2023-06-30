@@ -9,7 +9,7 @@ export default function homePageFactory() {
     Utils.addStyle(content, 'content');
 
     const contentTitle = Utils.createComponent('h1');
-    contentTitle.textContent = 'Grand Opening!';
+    contentTitle.textContent = 'Where memories are made with love!';
     Utils.addStyle(contentTitle, 'title');
 
     // const card = Utils.createComponent('div');

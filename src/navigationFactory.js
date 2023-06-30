@@ -13,19 +13,11 @@ export default function navigationFactory() {
     navItems.push(homeItem);
     navItems.push(menuItem);
     navItems.push(contactItem);
-
-    // const navElements = []
-
+    
     for (let i = 0; i < navItems.length; i++) {
         let navigationItem = navItems[i];
-        // let anchor = Utils.createComponent('a');
-        // Utils.addStyle(anchor, 'navItem')
-        // anchor.textContent = navigationItem.title;
         navElement.appendChild(navigationItem.navItemComponent);
     }
-
-    // console.log(navItems);
-    // const getNavigationItems = () => {return navItems;}
 
     const disableNavItemsActive = () => {
         for(let i = 0; i < navItems.length; i++) {

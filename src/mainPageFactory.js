@@ -32,7 +32,7 @@ export default function mainPageFactory() {
 
             case 'Contact':
                 mainPageElement.append(contactPage.contactElement)
-                Utils,addStyle(mainPageElement, contactPage.STYLE);
+                Utils.addStyle(mainPageElement, contactPage.STYLE);
                 break;
 
             default:
