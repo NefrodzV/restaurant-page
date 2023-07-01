@@ -24,12 +24,14 @@ body, .home {
     display: grid;
 }
 body {
+    position: relative;
     color: var(--shade-clr);
     font-family: 'BodyFont';
     background-color: var(--primary-clr);
     margin: 0;
     min-height: 100vh;
     grid-template-rows: 50px auto 25px;
+    
 }
 
 header {
@@ -67,6 +69,8 @@ nav {
 }
 main {
     background-color: var(--secondary-clr);
+    width: 100%;
+    height: auto;
 }
 footer {
     display: flex;
@@ -97,13 +101,39 @@ footer > h6 > a {
     background-color: var(--shade-clr);
 }
 
-.menu, .contact {
-    width: 100%;
-}
 .menu {
     background-color: var(--secondary-clr);
-    margin: 0 auto;
+    overflow: hidden;
+    padding:2rem 0;
+    
+    
 }
+
+.food-container {
+    margin: 0 auto;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    row-gap: 8px;
+    justify-content: center;
+    
+
+}
+
+.food-img-container {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.food-img-container img {
+    height: 100%;
+    object-fit: contain;
+    
+}
+
+
 
 .contact {
     display: flex;
@@ -112,7 +142,6 @@ footer > h6 > a {
 }
 
 .location {
-    
     height: min-content;
     width: 25%;
     margin: auto;
@@ -135,9 +164,19 @@ img {
 }
 
 .card {
-    width: 90%;
-    background-color: var(--secondary-clr);
-    height: 75%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ff5858;
+    height: 350px; 
+    float: none;
+    padding: 1rem;
+}
+
+
+
+.card:hover {
+    cursor: pointer;
+    border: 1px solid var(--primary-clr);
 }
 
 
