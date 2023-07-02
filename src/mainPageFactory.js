@@ -11,11 +11,11 @@ export default function mainPageFactory() {
     const contactPage = contactPageFactory();
 
     const mainPageElement = document.createElement('main');
-    mainPageElement.append(menuPage.menuPageElement);
-    Utils.addStyle(mainPageElement, '.menu');
-    // mainPageElement.append(home.content);
-    // mainPageElement.append(home.image)
-    // Utils.addStyle(mainPageElement, home.STYLE);
+    // mainPageElement.append(menuPage.menuPageElement);
+    // Utils.addStyle(mainPageElement, '.menu');
+    mainPageElement.append(home.content);
+    mainPageElement.append(home.image)
+    Utils.addStyle(mainPageElement, home.STYLE);
            
     
     const updateMainPage = (clickedNavItem) => {
