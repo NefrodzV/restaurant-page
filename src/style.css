@@ -31,7 +31,6 @@ body {
     margin: 0;
     min-height: 100vh;
     grid-template-rows: 50px auto 25px;
-    
 }
 
 header {
@@ -61,12 +60,10 @@ nav {
 }
 .title {
     line-height: 1.2;
-    /* width: min-content; */
     margin: auto;
     font-size: 5rem;
-    /* font-family: 'BrandFont'; */
-
 }
+
 main {
     background-color: var(--secondary-clr);
     width: 100%;
@@ -106,9 +103,6 @@ footer > h6 > a {
     overflow: hidden;
     padding:2rem 0;
     display: flex;
-
-    
-    
 }
 
 .food-container {
@@ -131,8 +125,6 @@ footer > h6 > a {
 .food-img-container img {
     height: 100%;
     object-fit: cover;
-    
-    
 }
 
 

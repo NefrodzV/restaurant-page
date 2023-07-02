@@ -31,10 +31,7 @@ export default function foodFactory(foodName, imgSrc, author, link) {
     creditPara.textContent = `Photo by ${anchorAuthor} on ${anchorUnsplash}`;
 
     image.appendChild(creditPara);
-    // element.appendChild(image);
     
-
-
     return {
         element
     }

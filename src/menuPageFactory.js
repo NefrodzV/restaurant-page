@@ -6,8 +6,6 @@ export default function menuPageFactory() {
     const STYLE = 'menu';
     const menuPageElement = document.createElement('div');
     menuPageElement.classList.add('food-container');
-    // menuPageElement.classList.add('box-shadow');    
-    
     menuPageElement.classList.add('corners');
 
     const foodMenu = foodMenuFactory().getFoods();
