@@ -1,17 +1,19 @@
-export default function foodFactory(imgSrc, author, link) {
+export default function foodFactory(foodName, imgSrc, author, link) {
 
     
 
     const element = document.createElement('div');
-    element.textContent = 'food card';
+    element.textContent = foodName;
     element.classList.add('card');
-    
+    element.classList.add('corners');
+    element.classList.add('box-shadow');
+
     const image = new Image();
     image.src = imgSrc;
 
     const foodImageContainer = document.createElement('div');
     foodImageContainer.classList.add('food-img-container');
-
+    
     foodImageContainer.append(image);
 
     element.appendChild(foodImageContainer);
