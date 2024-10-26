@@ -1,11 +1,12 @@
-const path =  require('path');
-
-module.exports = {
+import path, { dirname , } from 'path'
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+export  default {
     mode: 'development',
     entry: './src/index.js',
     output: {
         filename:'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(dirname(__filename), 'dist'),
     },
     module: {
        rules: [
