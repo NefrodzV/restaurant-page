@@ -2,21 +2,17 @@ const addStyle = (element, style)  => {
     element.classList.add(style)
 }
     
-const  addImage = (element, source) => {
+const addImage = (element, source) => {
     const image = new Image();
     image.src = source;
     element.appendChild(image);
 }
 
-
-const createComponent = (type) => {
+export const createElement = (type, css, style) => {
     const element = document.createElement(type);
-    console.log("Created a " + type);
+    if(css) element.classList.add(css)
+    if(style) element.style = style
     return element;
 }
 
-export default {
-    addStyle,
-    addImage,
-    createComponent
-}
+
