@@ -1,41 +1,7 @@
 import './style.css';
-import Utils from './Utils';
-import backgroundImage from './images/home-background.jpg';
-import Header from './headerFactory.js';
-import Footer from './footerFactory.js';
-import homeFactory from './homePageFactory';
-import mainPageFactory from './mainPageFactory';
+import  LayoutView  from './views/LayoutView.js';
 
-// Main Page Components
+const layout = LayoutView()
 
-//Header
-const header = Header();
-
-const navigation = header.getNavComponent();
-const navItems = navigation.getItems();
-
-// Eventlisteners for the navbar items
-for(let i = 0; i < navItems.length; i++) {
-    let navItem = navItems[i];
-    let element = navItem.navItemComponent;
-
-    
-    element.addEventListener('click',function(e){
-        navigation.disableNavItemsActive();
-        navItem.toggleActive();
-        let clickedNavItem = e.target.textContent;
-        main.updateMainPage(clickedNavItem);
-    })
-}
-
-// Main
-const main = mainPageFactory();
-
-// Footer
-const footer = Footer();
-
-document.body.appendChild(header.headerElement);
-document.body.appendChild(main.mainPageElement);
-document.body.appendChild(footer.footerElement);
 
 
