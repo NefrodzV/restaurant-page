@@ -34,7 +34,7 @@
     --secondary: #c3b5bd;
     --accent: #a48f96;
 
-    --font-size: 1rem;
+    --font-size: 1.5rem;
     --header-padding: 5%;
     --main-padding: 10%;
 
@@ -59,6 +59,7 @@ body {
     position: relative;
     color: var(--shade-clr);
     font-family: 'CrimsonRegular';
+    font-size: var(--font-size);
     background-color: var(--primary-clr);
     margin: 0;
     min-height: 100vh;
@@ -71,6 +72,10 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: var(--primary);
+}
+
+a {
+    font-size: var(--font-size);
 }
 
 .logo{
@@ -88,26 +93,48 @@ nav {
 }
 
 .navItem {
+    
     border-radius: var(--default-border);
     padding-inline: var(--medium-padding);
     text-transform: capitalize;
     cursor: pointer;
     display: flex;
-    justify-content: center;
     align-items: center;
     color: var(--background);
     text-decoration: none;
+    
     transition: all .5s ease-in-out;
 }
 
 .navItem:hover {
     color: var(--text);
-    background-color: var(--secondary);
+    /* background-color: var(--secondary); */
 }
 
-.navItem[active] {
-    background-color: var(--shade-clr);
+
+.navItem div {
+    display: flex;
+    align-items: center;
+    gap: var(--small-gap);
+    /* align-items: baseline;
+     */
 }
+
+.navItem div > * {
+    pointer-events: none;
+}
+
+.navItem   svg {
+    height: var(--font-size); 
+}
+
+.navItem:hover svg {
+    color: var(--text);  
+}
+
+.navItem[data-active=true], .navItem[data-active=true] svg {
+    color: var(--text);
+} 
 
 .home {
     grid-template-columns: .5fr 1fr;
@@ -147,7 +174,7 @@ a span {
 
 a svg {
     transition: all .5s ease-in-out;
-    height: calc(var(--font-size) * 2);
+    height: calc(var(--font-size));
     appearance:  1 / 1;
     color: var(--background);
 }
