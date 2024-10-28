@@ -17,10 +17,7 @@ export  default function LayoutView() {
     main.append(homeView)
 
 
-    function onNavItemClick(e) {
-        e.preventDefault()
-        const id = e.target.textContent
-
+    function onNavItemClick(id) {
         switch(id) {
             case 'home':
                 main.removeChild(main.children[0])
