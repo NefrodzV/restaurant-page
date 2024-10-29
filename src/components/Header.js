@@ -7,7 +7,13 @@ export default function Header(onNavItemClick) {
     const logo = createElement('div', 'logo')
     logo.textContent = 'Logo section'
     const navigation = Navigation(onNavItemClick)
-    const hamburgerButton = HamburgerButton()
+    const hamburgerButton = HamburgerButton(null, (isOpen) => {
+        if(isOpen) {
+            header.classList.add('expand')
+        } else {
+            header.classList.remove('expand')
+        }
+    })
     header.append(logo, hamburgerButton, navigation)
 
     return header

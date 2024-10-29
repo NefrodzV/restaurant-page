@@ -313,6 +313,54 @@ img {
     border: 1px solid var(--primary-clr);
 }
 
+@media(max-width: 600px) {
 
+    body {
+        grid-template-rows: min-content auto 50px;
+    }
+    header {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 50px auto;
+        position: relative;
+        overflow: hidden;
+        height: 50px;
+        transition: height .5s ease-in-out;
+    }
+
+    header.expand {
+        height: 175px;
+    }
+
+    nav {
+        
+        
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        padding: var(--header-padding);
+        background-color: var(--primary);
+        top: 100%;
+        left: 0;    
+    }
+
+    .hamburger[data-open=true] ~ nav {
+        
+    }
+}
+
+@keyframes showMenu {
+    from {
+        
+        height: 0;
+        
+    }
+
+    to {
+        height: 120px;
+        
+        
+    }
+}
 
 

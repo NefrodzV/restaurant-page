@@ -33,17 +33,15 @@ export default function Navigation(onItemClick) {
     });
     
     const aboutSvg = Svg({
-        
-       
         viewBox: "0 -960 960 960",
         fill: "currentColor",
     }, [aboutPath]);
 
-    const homeItem = NavItem(homeSvg, 'home', '/', null, onClickCallback)
-    const menuItem = NavItem(menuSvg, 'menu', '/menu', null, onClickCallback)
-    const aboutItem = NavItem(aboutSvg, 'about', '/about', {
+    const homeItem = NavItem(homeSvg, 'home', '/', {
         'data-active': true
-    },onClickCallback)
+    }, onClickCallback)
+    const menuItem = NavItem(menuSvg, 'menu', '/menu', null, onClickCallback)
+    const aboutItem = NavItem(aboutSvg, 'about', '/about', null,onClickCallback)
 
     function onClickCallback(id) {
         onItemClick(id);

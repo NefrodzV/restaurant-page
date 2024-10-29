@@ -25,10 +25,12 @@ export default function HamburgerButton( attributes , onClick) {
         console.log(isOpen)
 
         if(isOpen) {
+            onClick(false)
             button.setAttribute('data-open', 'false');
             button.setAttribute('aria-expanded', 'false')
             button.setAttribute('aria-label', 'Open navigation')
         } else {
+            onClick(true)
             button.setAttribute('data-open', 'true');
             button.setAttribute('aria-expanded', 'true')
             button.setAttribute('aria-label', 'Close navigation')
