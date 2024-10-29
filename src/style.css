@@ -136,6 +136,56 @@ nav {
     color: var(--text);
 } 
 
+.hamburger {
+    position: relative;
+    border: none;
+    border-radius: var(--default-border);
+    padding: 0;
+    cursor: pointer;
+    height: fit-content;
+    height: 30px;
+    width: 35px;
+    background-color: transparent;
+}
+
+.hamburger > div {
+    position: absolute;
+    pointer-events: none;
+    height: 4px;
+    width: 100%;
+    background-color: var(--text);
+    border-radius: var(--default-border);
+    transition: .5s cubic-bezier(.8, .5, .2, 1.4);;
+}
+
+.hamburger > div:nth-child(1) {
+    top: 0;
+}
+
+.hamburger > div:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger > div:nth-child(3) {
+    bottom: 0;
+}
+
+.hamburger[data-open=true] > div:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.hamburger[data-open=true] > div:nth-child(2) {
+    opacity: 0;
+    transform: translate(-100%);
+}
+
+.hamburger[data-open=true] > div:nth-child(3) {
+    top:50%;
+    transform: rotate(-45deg);
+}
+
 .home {
     grid-template-columns: .5fr 1fr;
     background-color: var(--secondary-clr);
