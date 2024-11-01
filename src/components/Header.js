@@ -14,6 +14,14 @@ export default function Header(onNavItemClick) {
             header.classList.remove('expand')
         }
     })
+    window.addEventListener('resize', () => {
+        if(!window.matchMedia('(max-width:600px)').matches) {
+            hamburgerButton.setAttribute('data-open', 'false');
+            hamburgerButton.setAttribute('aria-expanded', 'false')
+            hamburgerButton.setAttribute('aria-label', 'Open navigation')
+            header.classList.remove('expand')
+        }
+    })
     header.append(logo, hamburgerButton, navigation)
 
     return header
