@@ -9,7 +9,7 @@ export  default function LayoutView() {
     const header = Header(onNavItemClick)
     const footer = Footer()
 
-    const homeView = HomeView()
+    const homeView = HomeView(onNavItemClick)
     const foodMenuView  = FoodMenuView()
     const aboutView = AboutView()
 
