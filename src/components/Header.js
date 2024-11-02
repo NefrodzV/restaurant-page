@@ -2,11 +2,11 @@ import { createElement } from "../utils.js";
 import HamburgerButton from "./HamburgerButton.js";
 import  Navigation  from "./Navigation.js";
 
-export default function Header(onNavItemClick) {
+export default function Header() {
     const header = createElement('header')
     const logo = createElement('div', 'logo')
     logo.textContent = 'Fusion Flavor'
-    const navigation = Navigation(onNavItemClick)
+    const navigation = Navigation()
     const hamburgerButton = HamburgerButton(null, (isOpen) => {
         if(isOpen) {
             header.classList.add('expand')

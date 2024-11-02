@@ -1,7 +1,8 @@
 import { createElement } from '../utils.js'
 import smallImage from '../assets/restaurant-small.jpg'
 import mediumImage from '../assets/restaurant-medium.jpg'
-export default function HomeView(changeLocationListener) {
+import { navigationObserver } from '../observers.js'
+export default function HomeView() {
     const root =  createElement('div')
     root.classList.add('home')
     
@@ -18,7 +19,7 @@ export default function HomeView(changeLocationListener) {
     actionButton.textContent = 'View Menu'
     actionButton.addEventListener('click', (e) => {
         e.preventDefault()
-        changeLocationListener('menu')
+        navigationObserver.notify('menu')
     })
     actionButton.href = '/menu'
     contentContainer.append(h1, h2, actionButton)

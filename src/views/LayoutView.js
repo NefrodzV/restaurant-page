@@ -1,15 +1,16 @@
 import Footer from "../components/Footer.js";
 import Header from "../components/Header.js";
+import { navigationObserver } from "../observers.js";
 import { createElement } from "../utils.js";
 import AboutView from "./AboutView.js";
 import FoodMenuView from "./FoodMenuView.js";
 import HomeView from './HomeView.js'
 
 export  default function LayoutView() {
-    const header = Header(onNavItemClick)
+    const header = Header()
     const footer = Footer()
 
-    const homeView = HomeView(onNavItemClick)
+    const homeView = HomeView()
     const foodMenuView  = FoodMenuView()
     const aboutView = AboutView()
 
@@ -17,7 +18,7 @@ export  default function LayoutView() {
     main.append(homeView)
 
 
-    function onNavItemClick(id) {
+    function render(id) {
         switch(id) {
             case 'home':
                 main.removeChild(main.children[0])
@@ -36,6 +37,8 @@ export  default function LayoutView() {
 
         }
     }
+
+    navigationObserver.subscribe(render)
 
     document.body.append(header, main, footer)
 }

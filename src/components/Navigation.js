@@ -1,8 +1,9 @@
+import { navigationObserver } from "../observers.js";
 import { createElement } from "../utils.js";
 import Path from "./Path.js";
 import Svg from "./Svg.js";
 
-export default function Navigation(onItemClick) {
+export default function Navigation() {
     const nav = createElement('nav')
     
     const homePath = Path({
@@ -39,27 +40,39 @@ export default function Navigation(onItemClick) {
 
     const homeItem = NavItem(homeSvg, 'home', '/', {
         'data-active': true
-    }, onClickCallback)
-    const menuItem = NavItem(menuSvg, 'menu', '/menu', null, onClickCallback)
-    const aboutItem = NavItem(aboutSvg, 'about', '/about', null,onClickCallback)
+    }, onNavItemClickHandler)
+    const menuItem = NavItem(menuSvg, 
+        'menu', 
+        '/menu', 
+        null, 
+        onNavItemClickHandler)
+    const aboutItem = NavItem(aboutSvg, 'about', '/about', null,onNavItemClickHandler)
 
-    function onClickCallback(id) {
-        onItemClick(id);
+    function onNavItemClickHandler(id) {
+        
         [menuItem,homeItem,aboutItem].forEach(item => {
             if(item.textContent != id) {
                 item.setAttribute('data-active', false)
                 const path = item.children[0].children[0].children[0]
                 path.setAttribute('d', path.getAttribute('data-d-default'))
+            } else {
+                item.setAttribute('data-active', true)
+                const path = item.children[0].children[0].children[0]
+                path.setAttribute('d', path.getAttribute('data-d-active'))
             }
         })
     }
+
+    navigationObserver.subscribe(onNavItemClickHandler)
+
+    
 
 
     nav.append(homeItem, menuItem, aboutItem)
     return nav
 }
 
-function NavItem(svg, text, href, attributes , clickCb) {
+function NavItem(svg, text, href, attributes , clickHandler) {
     const item = createElement('a','navItem')
     const itemContainer = createElement('div')
     const itemSpan = createElement('span')
@@ -86,10 +99,11 @@ function NavItem(svg, text, href, attributes , clickCb) {
 
     function onItemClick(e) {
         e.preventDefault()
+        navigationObserver.notify(text)
         item.setAttribute('data-active', true)
         const path = svg.children[0]
         path.setAttribute('d', path.getAttribute('data-d-active'))
-        clickCb(text)
+        clickHandler(text)
 
     }
     return item
