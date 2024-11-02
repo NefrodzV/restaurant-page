@@ -254,7 +254,7 @@ img {
 }
 
 main {
-    background-color: var(--secondary-clr);
+    background-color: var(--background);
     width: 100%;
 }
 footer, footer a, a span{
