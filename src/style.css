@@ -71,7 +71,6 @@ body {
     color: var(--shade-clr);
     font-family: 'CrimsonRegular';
     font-size: var(--font-size);
-    background-color: var(--primary-clr);
     margin: 0;
     min-height: 100vh;
     grid-template-rows: 50px auto 50px;
@@ -228,7 +227,7 @@ nav {
 }
 
 img {
-    max-height: 500px;
+    /* max-height: 500px; */
     border-radius: var(--default-border);
 }
 .home-content {
@@ -300,21 +299,19 @@ footer a:hover, footer a:hover svg{
 .food-container {
     
     display: grid;
-    grid-template-columns: repeat(2, 50%);
-    gap: var(--small-gap);
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    gap: var(--medium-gap);
     padding:8px; 
 }
 
-.food-container article {
-    
-}
-.food > * {
-    box-sizing: border-box;
+.food {
+    height: max-content;
 }
 
-
-
-
+.food p {
+    margin: 0;
+}
 
 .contact {
     display: flex;
