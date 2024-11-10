@@ -3,8 +3,10 @@ import ricePorkSmall from '../assets/rice-pork-small.jpg'
 import ricePorkMedium from '../assets/rice-pork-medium.jpg'
 import sushiSmall from '../assets/sushi-small.jpg'
 import sushiMedium from '../assets/sushi-medium.jpg'
-import FoodList from "../components/FoodList.js"
+import fivePlateSushiSmall from '../assets/five-sushi-plate.jpg'
+import fivePlateSushiMedium from '../assets/five-sushi-plate-medium.jpg'
 
+import FoodList from "../components/FoodList.js"
 
 export default function FoodMenuView() {
     const section = createElement('section','food-section')
@@ -38,12 +40,14 @@ const foods = [
             medium: ricePorkMedium
         }    
     },
+
     {
-        name: 'Sushi Serenade',
-        description: "Indulge in a culinary masterpiece with our Sushi Serenade, a vibrant platter that showcases the artistry of traditional sushi-making. This exquisite selection features an array of freshly prepared rolls, each crafted with the finest sushi-grade fish, crisp vegetables, and perfectly seasoned rice. From classic California rolls to inventive specialty creations, every piece is a harmony of flavors and textures, complemented by a delicate touch of wasabi and pickled ginger. The platter is artfully arranged to celebrate the beauty of the ocean’s bounty, making it perfect for sharing or savoring solo. Dive into this delightful experience and let your taste buds be serenaded by the fresh, exquisite flavors of the sea!",
+        name: 'Fusion Five: Sushi Symphony',
+        description: 'A curated selection of five distinct sushi creations, each blending traditional flavors with unexpected twists. Experience a harmonious fusion of textures and tastes in every bite, where bold innovation meets classic craftsmanship. Perfect for adventurous palates seeking a new sushi experience.',
         url: {
-            small:sushiSmall,
-            medium: sushiMedium
+            small: fivePlateSushiSmall,
+            medium: fivePlateSushiMedium,
         }
+
     }
 ]
