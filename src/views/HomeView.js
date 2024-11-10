@@ -9,6 +9,7 @@ export default function HomeView() {
 
     const container = createElement('div')
     container.classList.add('double-col-container')
+    container.classList.add('hero')
     const contentContainer = createElement('div')
     contentContainer.classList.add('home-content')
     const h1 = createElement('h1')
