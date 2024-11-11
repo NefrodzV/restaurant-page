@@ -106,10 +106,22 @@ a.primary {
 }
 
 
-
+.fusion-flavor-logo {
+    height: var(--font-size);
+    animation: rotate 3s linear infinite;
+}
 .logo{
+    cursor: pointer;
+    font-family: 'CrimsonBold';
+    display: flex;
+    align-items: center;
+    gap: var(--small-gap);
     height: fit-content;
     margin: 0;
+    transition: color .5s ease-in-out;
+}
+.logo:hover {
+    color: var(--background)
 }
 
 nav {
@@ -310,18 +322,11 @@ footer a:hover, footer a:hover svg{
 .food img {
     aspect-ratio: 1 / .8;
 }
-.contact {
-    display: flex;
-    height: 100%;
-    text-align: center;
+
+.about {
+    padding-inline: var(--body-padding);
 }
 
-.location {
-    height: min-content;
-    width: 25%;
-    margin: auto;
-    padding: 1rem;
-}
 img {
     height: 100%;
     width: 100%;
@@ -435,6 +440,17 @@ img {
         height: 120px;
         
         
+    }
+}
+
+@keyframes rotate {
+    
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
 

@@ -1,11 +1,15 @@
 import { createElement } from "../utils.js";
+import FusionFlavorLogo from "./FusionFlavorLogo.js";
 import HamburgerButton from "./HamburgerButton.js";
 import  Navigation  from "./Navigation.js";
 
 export default function Header() {
     const header = createElement('header')
     const logo = createElement('div', 'logo')
-    logo.textContent = 'Fusion Flavor'
+    const fusionFlavorLogo = FusionFlavorLogo()
+    const spanLogo = createElement('span')
+    spanLogo.textContent = 'Fusion Flavor'
+    logo.append(fusionFlavorLogo, spanLogo)
     const navigation = Navigation()
     const hamburgerButton = HamburgerButton(null, (isOpen) => {
         if(isOpen) {
