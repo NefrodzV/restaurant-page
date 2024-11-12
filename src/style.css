@@ -59,11 +59,13 @@ body, .home {
 }
 
 h1 {
+    font-family: 'CrimsonBold';
     font-size: calc(var(--font-size) * 2.3);
     margin: 0;
 }
 
 h2 {
+    font-family: 'CrimsonSemiBold';
     font-size: calc(var(--font-size) * 1.2);
 }
 body {
@@ -325,6 +327,18 @@ footer a:hover, footer a:hover svg{
 
 .about {
     padding-inline: var(--body-padding);
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(2, 50%); 
+}
+
+.details .fusion-flavor-logo {
+   height: 50%;
+   animation: none;
+   align-self: center;
+   justify-self: center;
 }
 
 img {
