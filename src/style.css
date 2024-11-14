@@ -330,15 +330,16 @@ footer a:hover, footer a:hover svg{
 }
 
 .details {
+    
     display: grid;
-    grid-template-columns: repeat(2, 50%); 
+    grid-template-columns: repeat(2, 50%);
 }
 
 .details .fusion-flavor-logo {
-   height: 50%;
+   height: 250px;
    animation: none;
-   align-self: center;
    justify-self: center;
+   align-self: center;
 }
 
 img {
