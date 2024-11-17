@@ -4,7 +4,9 @@ import  Path  from "./Path.js"
 export default function Footer() {
     const footer = createElement('footer')
     
-    const githubAnchor = createElement('a')
+    const githubAnchor = createElement('a',null,null, {
+        href: 'https://github.com/NefrodzV'
+    })
     const githubSpan = createElement('span')
     githubSpan.textContent = "NrodzV"
     const githubSvg = Svg({
