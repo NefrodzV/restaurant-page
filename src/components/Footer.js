@@ -6,7 +6,7 @@ export default function Footer() {
     
     const githubAnchor = createElement('a')
     const githubSpan = createElement('span')
-    githubSpan.textContent = "Neftaly"
+    githubSpan.textContent = "NrodzV"
     const githubSvg = Svg({
         viewBox: '0 0 32 32',
         fill: 'currentColor',
