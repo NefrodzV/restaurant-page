@@ -330,7 +330,6 @@ footer a:hover, footer a:hover svg{
 }
 
 .details {
-    
     display: grid;
     grid-template-columns: repeat(2, 50%);
 }
@@ -342,6 +341,34 @@ footer a:hover, footer a:hover svg{
    align-self: center;
 }
 
+.working-location {
+    display: flex;
+    flex: 1;
+    
+}
+.visit-us p{
+    margin: 0;
+}
+.working-location > * {
+    flex: 1;
+}
+
+.working-hours-wrapper {
+    display: flex;
+    justify-content: center;  
+}
+
+.working-hours-list {
+    list-style-type: none;
+    padding: 0;
+    justify-self: center;
+}
+
+.working-hours-list
+
+.semi-bold, span.semi-bold {
+    font-family: 'CrimsonSemiBold';
+}
 img {
     height: 100%;
     width: 100%;
@@ -441,6 +468,23 @@ img {
 
     .home-content {
         padding: var(--body-padding);
+    }
+
+    .details {
+        grid-template-columns: none;
+        grid-row: auto auto;
+    }
+
+    .details .fusion-flavor-logo {
+        height: 150px;
+        grid-row: 1 / 2;
+    }
+    .working-location {
+        flex-direction: column;
+    }
+
+    .working-hours-wrapper {
+        justify-content: initial;
     }
    
 }
