@@ -15,7 +15,8 @@ export default function FusionFlavorLogo(width, height) {
     const svg = Svg({
         version: '1.0',
         viewBox: "0 0 1210.000000 1280.000000",
-        preserveAspectRatio: "xMidYMid meet"
+        preserveAspectRatio: "xMidYMid meet",
+        alt: 'Fusion Logo Svg'
     },[group])
 
     svg.classList.add('fusion-flavor-logo')
