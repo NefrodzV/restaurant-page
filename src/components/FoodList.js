@@ -4,7 +4,7 @@ export default function FoodList(items) {
     const foodItems = []
     const section = createElement('div', 'foodList')
     const sectionTitle = createElement('h1', 'title')
-    sectionTitle.textContent = 'Fusion Flavor Foods'
+    sectionTitle.textContent = 'Flavor Fusion Foods'
     const foodContainer = createElement('div', 'food-container')
     section.append(sectionTitle, foodContainer)
 
