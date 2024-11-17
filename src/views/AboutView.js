@@ -16,7 +16,60 @@ export default function AboutView() {
     aboutUsArticle.append(aboutUsDiv, logo)
 
     // Working hours article
-
-    section.append(title, aboutUsArticle)
+    const workingHoursAndLocationArticle = createElement('article', 'working-location')
+    const workingHours = createWorkingHours()
+    const workingHoursWrapper = createElement('div', 'working-hours-wrapper')
+    workingHoursWrapper.appendChild(workingHours)
+    const location = createLocation()
+    workingHoursAndLocationArticle.append(location, workingHoursWrapper)
+   
+    section.append(title, aboutUsArticle, workingHoursAndLocationArticle)
     return section
+}
+
+function createWorkingHours() {
+    const workingHours = [
+        { day: "Monday", hours: "10:00 AM - 9:00 PM" },
+        { day: "Tuesday", hours: "10:00 AM - 9:00 PM" },
+        { day: "Wednesday", hours: "10:00 AM - 9:00 PM" },
+        { day: "Thursday", hours: "10:00 AM - 9:00 PM" },
+        { day: "Friday", hours: "10:00 AM - 10:00 PM" },
+        { day: "Saturday", hours: "11:00 AM - 10:00 PM" },
+        { day: "Sunday", hours: "Closed" }
+    ];
+    const workingHoursDiv = createElement('div', 'working-hours')
+    const workingHoursH2 = createElement('h2')
+    workingHoursH2.textContent = "Our Working Hours"
+    const hoursList = createElement('ul', 'working-hours-list')
+    workingHours.forEach(({hours, day}) => {
+        const li = createElement('li')
+        li.innerHTML = `<span class="semi-bold">${day}</span>: ${hours}`
+        hoursList.appendChild(li)
+    })
+    workingHoursDiv.append(workingHoursH2, hoursList)
+    return workingHoursDiv
+}
+
+function createLocation() {
+    const locationInfo = {
+        address: "123 Flavor Street, Foodie City, FC 56789",
+        phone: "(123) 456-7890",
+        email: "info@fisionflabor.com",
+        description: "We are located in the heart of Foodie City, near the central park. Come enjoy a unique dining experience!"
+    };
+    const locationDiv = createElement('div','visit-us')
+    const locationH2 = createElement('h2')
+    locationH2.textContent = 'Visit Us'
+    const address = createElement('p')
+    address.innerHTML = `<span class="semi-bold">Address:</span> ${locationInfo.address}`
+    const phone = createElement('p')
+    phone.innerHTML = `<span class="semi-bold">Phone:</span> ${locationInfo.phone}`
+    const email = createElement('p')
+    email.innerHTML = `<span class="semi-bold">Email:</span> ${locationInfo.email}`
+    const description = createElement('p')
+    description.textContent = locationInfo.description
+
+    locationDiv.append(locationH2, description, address, phone, email, )
+    return locationDiv
+    
 }
