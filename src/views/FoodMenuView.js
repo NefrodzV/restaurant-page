@@ -11,9 +11,6 @@ import chickenRicePlateSmall from '../assets/chicken-rice-plate-small.jpg'
 import chickenRicePlateMedium from '../assets/chicken-rice-plate-medium.jpg'
 import riceShrimpSalmonSmall from '../assets/rice-shrimp-salmon-small.jpg'
 import riceShrimpSalmonMedium from '../assets/rice-shrimp-salmon-medium.jpg'
-
-
-
 import FoodList from "../components/FoodList.js"
 
 export default function FoodMenuView() {

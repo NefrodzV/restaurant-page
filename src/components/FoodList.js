@@ -22,7 +22,8 @@ export default function FoodList(items) {
 function FoodItem(name, description, url) {
     const card  = createElement('article', 'food')
     const image = new Image()
-    image.src = url.medium
+    image.src = url.small
+    image.setAttribute('alt', `Image of ${name}`)
     const title = createElement('h2', 'title')
     title.textContent = name;
     const paragraph = createElement('p')
