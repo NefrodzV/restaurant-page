@@ -134,7 +134,7 @@ nav {
 }
 
 .navItem {
-    
+   
     border-radius: var(--default-border);
     padding-inline: var(--medium-padding);
     text-transform: capitalize;
@@ -163,6 +163,7 @@ nav {
 }
 
 .navItem   svg {
+    color: var(--background);
     height: var(--font-size); 
 }
 
